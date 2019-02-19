@@ -5,15 +5,16 @@ require('dotenv').config();
 
 // Loads express to do the heavy lifting of the server
 const express = require('express');
+const cors = require('cors');
 
 // Establishes PORT number
 const PORT = process.env.PORT || 3000
 const app = express();
-
+app.use(cors());
 
 // Creates the routes (paths) from APIs that the user can access the server
 app.get('/location', (request, response) => {
-  const locationData = searchToLong(request.query.data);
+  const locationData = searchToLatLong(request.query.data);
   response.send(locationData);
 });
 
@@ -43,18 +44,20 @@ function Location(query, res) {
   this.longitude = res.results[0].geometry.location.lng;
 }
 
-function getWeather() {
-  const darkskyData = require('./data/darksky.json');
+// function getWeather() {
+//   const darkskyData = require('./data/darksky.json');
 
 
-  darkskyData.daily.data.forEach(day => {
-    weatherSummaries.push(new Weather(day));
-  });
-  return 
-}
+//   darkskyData.daily.data.forEach(day => {
+//     weatherSummaries.push(new Weather(day));
+//   });
+//   return
+// }
 
 function Weather(day) {
   this.forecast = day.summary;
   this.time = new Date(day.time * 1000).toString().slice(0, 15);
 }
 
+// Listener for requests
+app.listen(PORT, () => console.log(`App is up on ${PORT}`));
