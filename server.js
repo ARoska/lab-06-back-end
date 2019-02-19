@@ -60,4 +60,4 @@ function Weather(day) {
 }
 
 // Listener for requests
-app.listen(PORT, () => console.log(`App is up on ${PORT}`));
+// app.listen(PORT, () => console.log(`App is up on ${PORT}`));
