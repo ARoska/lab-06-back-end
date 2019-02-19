@@ -7,10 +7,21 @@
 Cit Explorer is an application that allows users to search for a city and receive a local information including a map, weather, eateries, meetups, movies filmed there, and hiking highlights.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Visit ___________ and input ______________.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+This application is built in JavaScript using the following libraries and APIs:
+--jQuery
+--Handlebars
+--Google Maps API
+--Darksky API
+--Meetup API
+--MovieDB API
+--Hking Project API
+
+Dependencies:
+--Express
+--dotenv
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
